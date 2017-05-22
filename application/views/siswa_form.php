@@ -138,17 +138,21 @@
             <td><input type="date" class="form-control" name="tahun_masuk_ppm" id="tahun_masuk_ppm" placeholder="Tahun Masuk Ppm" value="<?php echo $tahun_masuk_ppm; ?>" />
         </td>
 	    <tr>
-                <td>Kelas <?php echo form_error('jenis_kelamnin') ?>                    
+                <td>Kelas <?php echo form_error('id_kelas') ?>                    
                 </td>
                 <td>
-                <!-- <select input type="text" class="form-control" name="kelas" id="kelas" placeholder="Kelas" value="<?php echo $kelas; ?>" />
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select> -->
-                <?php echo cmb_dinamis('id_kelas', 'kelas', 'kelas', 'id_kelas', $id_kelas) ?>
+
+              <select class="form-control">
+              <?php
+                foreach ($wow as $key) {
+
+              ?>
+                  
+
+                  <option value="<?php echo $key->id_kelas ?>"><?php echo $key->kelas;?></option>
+                  <?php }?>
+              </select>
+                <!-- <?php echo cmb_dinamis('id_kelas', 'kelas', 'kelas', 'id_kelas', $id_kelas) ?>  -->
                 </td>
             </tr>
 	    <input type="hidden" name="id" value="<?php echo $id; ?>" /> 

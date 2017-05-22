@@ -10,10 +10,15 @@ class Siswa extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Siswa_model');
+        $this->load->model(array('Kelas_model','Siswa_model'));
         $this->load->library('form_validation');
     }
 
+    /* public function getKelas(){
+        $data['wow'] = $this->Kelas_model->kelas2();
+        $this->template->load('template','siswa_form', $data);
+    }
+*/
     public function index()
     {
         $siswa = $this->Siswa_model->get_all();
@@ -65,6 +70,11 @@ class Siswa extends CI_Controller
         }
     }
 
+   /*  public function getKelas(){
+        $data['kelas'] = $this->Kelas_model->kelas2();
+        $this->template->load('template','siswa_form', $data);
+    }*/
+
     public function create() 
     {
         $data = array(
@@ -98,6 +108,7 @@ class Siswa extends CI_Controller
 	    'tahun_masuk_ppm' => set_value('tahun_masuk_ppm'),
 	    'kelas' => set_value('id_kelas'),
 	);
+        $data['wow'] = $this->Kelas_model->kelas2();
         $this->template->load('template','siswa_form', $data);
     }
     

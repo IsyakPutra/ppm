@@ -14,10 +14,11 @@ class Kelas extends CI_Controller
         $this->load->library('form_validation');
     }
 
+   
+
     public function index()
     {
         $kelas = $this->Kelas_model->get_all();
-
         $data = array(
             'kelas_data' => $kelas
         );

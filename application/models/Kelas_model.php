@@ -15,6 +15,13 @@ class Kelas_model extends CI_Model
         parent::__construct();
     }
 
+    public function kelas2(){
+        $this->db->select('*');
+        $query = $this->db->get('kelas');
+        return $query->result();
+
+    }
+
     // get all
     function get_all()
     {
