@@ -132,16 +132,7 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-
-                        <li>
-                            <a href="<?php echo site_url('dashboard1') ?>">
-                            <!--
-                            <a href="index.php?module=dashboard">
-                            -->
-                                <i class="fa fa-laptop"></i> <span>BERANDA</span>
-                            </a>
-                        </li>
-                        <li class="header">KELOLA DATA SISWA</li>
+                        <li class="header"><center>KELOLA DATA SISWA</center></li>
                         <?php
                         $menu = $this->db->get_where('menu', array('is_parent' => 0,'is_active'=>1));
                         foreach ($menu->result() as $m) {
@@ -166,37 +157,31 @@
 
 
 
-                        <li class="header">AKADEMIK SISWA</li>
-                        <li class="treeview">
+                        <li class="header"><center>AKADEMIK SISWA</center></li>
+
+        <li>
+            <a href="<?php echo site_url('nilai') ?>">
+                <i class="fa fa-edit"></i> <span>NILAI AKADEMIK</span>
+            </a>
+        </li>
+
+        <li class="treeview">
           <a href="#">
-            <i class="fa fa-laptop"></i>
-            <span>UI Elements</span>
+            <i class="fa fa-pie-chart"></i>
+            <span>GRAFIK NILAI</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
+          </a>          
           <ul class="treeview-menu">
-            <li><a href="application/views/siswa_list.php"><i class="fa fa-circle-o"></i> General</a></li>
+            <li><a href="<?php echo site_url('chart') ?>"><i class="fa fa-circle-o"></i> Nilai Kelas</a></li>
+            <li><a href="<?php echo site_url('chart') ?>"><i class="fa fa-circle-o"></i> Nilai Semester</a></li>
             
           </ul>
         </li>
-
-                        <li>
-                            <a href="<?php echo site_url('siswa_list') ?>">
-                            <!--
-                            <a href="index.php?module=dashboard">
-                            -->
-                                <i class="fa fa-edit"></i> <span>NILAI AKADEMIK</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo site_url('chart') ?>">                        
-                                <i class="fa fa-pie-chart"></i> <span>GRAFIK NILAI</span>
-                            </a>
-                        </li>
-            
-
-                    </ul>
+        
+        
+        </ul>
                 </section>
                 <!-- /.sidebar -->
             </aside>
@@ -205,7 +190,7 @@
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>
+                    <!-- <h1>
                         Admin Management
                         <small>Table Siswa</small>
                     </h1>
@@ -213,13 +198,18 @@
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                         <li><a href="#">Tables</a></li>
                         <li class="active">Data tables</li>
-                    </ol>
+                    </ol> -->
+                </section>
+                <section>
+                    <i class="fa fa-user" aria-hidden="true" style="color: #b8c7ce; font-size: 160px; margin-left: 40%; margin-top: 3%"></i> 
+                    <h2 style="margin-left: 23%"> &nbspSelamat Datang Admin<strong> PPM Yogyakarta!</strong></h2>
+                    
                 </section>
 
 
-                <?php
+                <!-- <?php
                 echo $contents;
-                ?>
+                ?> -->
 
 
 

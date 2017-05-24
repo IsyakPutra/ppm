@@ -10,15 +10,10 @@ class Siswa extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model(array('Kelas_model','Siswa_model'));
+        $this->load->model('Siswa_model');
         $this->load->library('form_validation');
     }
 
-    /* public function getKelas(){
-        $data['wow'] = $this->Kelas_model->kelas2();
-        $this->template->load('template','siswa_form', $data);
-    }
-*/
     public function index()
     {
         $siswa = $this->Siswa_model->get_all();
@@ -36,7 +31,6 @@ class Siswa extends CI_Controller
         if ($row) {
             $data = array(
 		'id' => $row->id,
-		'id_jurusan' => $row->id_jurusan,
 		'nama_lengkap' => $row->nama_lengkap,
 		'nama_panggilan' => $row->nama_panggilan,
 		'tempat_lahir' => $row->tempat_lahir,
@@ -54,14 +48,16 @@ class Siswa extends CI_Controller
 		'pekerjaan_ibu' => $row->pekerjaan_ibu,
 		'jumlah_saudara' => $row->jumlah_saudara,
 		'urutan' => $row->urutan,
-		'universitas' => $row->universitas,
+		'id_universitas' => $row->id_universitas,
 		'fakultas' => $row->fakultas,
 		'prodi' => $row->prodi,
+		'id_jurusan' => $row->id_jurusan,
 		'angkatan_universitas' => $row->angkatan_universitas,
 		'tahun_masuk_universitas' => $row->tahun_masuk_universitas,
 		'angkatan_ppm' => $row->angkatan_ppm,
 		'tahun_masuk_ppm' => $row->tahun_masuk_ppm,
-		'kelas' => $row->id_kelas,
+		'kelas' => $row->kelas,
+		'id_kelas' => $row->id_kelas,
 	    );
             $this->template->load('template','siswa_read', $data);
         } else {
@@ -70,18 +66,12 @@ class Siswa extends CI_Controller
         }
     }
 
-   /*  public function getKelas(){
-        $data['kelas'] = $this->Kelas_model->kelas2();
-        $this->template->load('template','siswa_form', $data);
-    }*/
-
     public function create() 
     {
         $data = array(
             'button' => 'Create',
             'action' => site_url('siswa/create_action'),
 	    'id' => set_value('id'),
-	    'id_jurusan' => set_value('id_jurusan'),
 	    'nama_lengkap' => set_value('nama_lengkap'),
 	    'nama_panggilan' => set_value('nama_panggilan'),
 	    'tempat_lahir' => set_value('tempat_lahir'),
@@ -99,16 +89,17 @@ class Siswa extends CI_Controller
 	    'pekerjaan_ibu' => set_value('pekerjaan_ibu'),
 	    'jumlah_saudara' => set_value('jumlah_saudara'),
 	    'urutan' => set_value('urutan'),
-	    'universitas' => set_value('universitas'),
+	    'id_universitas' => set_value('id_universitas'),
 	    'fakultas' => set_value('fakultas'),
 	    'prodi' => set_value('prodi'),
+	    'id_jurusan' => set_value('id_jurusan'),
 	    'angkatan_universitas' => set_value('angkatan_universitas'),
 	    'tahun_masuk_universitas' => set_value('tahun_masuk_universitas'),
 	    'angkatan_ppm' => set_value('angkatan_ppm'),
 	    'tahun_masuk_ppm' => set_value('tahun_masuk_ppm'),
-	    'kelas' => set_value('id_kelas'),
+	    'kelas' => set_value('kelas'),
+	    'id_kelas' => set_value('id_kelas'),
 	);
-        $data['wow'] = $this->Kelas_model->kelas2();
         $this->template->load('template','siswa_form', $data);
     }
     
@@ -120,7 +111,6 @@ class Siswa extends CI_Controller
             $this->create();
         } else {
             $data = array(
-		'id_jurusan' => $this->input->post('id_jurusan',TRUE),
 		'nama_lengkap' => $this->input->post('nama_lengkap',TRUE),
 		'nama_panggilan' => $this->input->post('nama_panggilan',TRUE),
 		'tempat_lahir' => $this->input->post('tempat_lahir',TRUE),
@@ -138,14 +128,16 @@ class Siswa extends CI_Controller
 		'pekerjaan_ibu' => $this->input->post('pekerjaan_ibu',TRUE),
 		'jumlah_saudara' => $this->input->post('jumlah_saudara',TRUE),
 		'urutan' => $this->input->post('urutan',TRUE),
-		'universitas' => $this->input->post('universitas',TRUE),
+		'id_universitas' => $this->input->post('id_universitas',TRUE),
 		'fakultas' => $this->input->post('fakultas',TRUE),
 		'prodi' => $this->input->post('prodi',TRUE),
+		'id_jurusan' => $this->input->post('id_jurusan',TRUE),
 		'angkatan_universitas' => $this->input->post('angkatan_universitas',TRUE),
 		'tahun_masuk_universitas' => $this->input->post('tahun_masuk_universitas',TRUE),
 		'angkatan_ppm' => $this->input->post('angkatan_ppm',TRUE),
 		'tahun_masuk_ppm' => $this->input->post('tahun_masuk_ppm',TRUE),
-		'kelas' => $this->input->post('id_kelas',TRUE),
+		'kelas' => $this->input->post('kelas',TRUE),
+		'id_kelas' => $this->input->post('id_kelas',TRUE),
 	    );
 
             $this->Siswa_model->insert($data);
@@ -163,7 +155,6 @@ class Siswa extends CI_Controller
                 'button' => 'Update',
                 'action' => site_url('siswa/update_action'),
 		'id' => set_value('id', $row->id),
-		'id_jurusan' => set_value('id_jurusan', $row->id_jurusan),
 		'nama_lengkap' => set_value('nama_lengkap', $row->nama_lengkap),
 		'nama_panggilan' => set_value('nama_panggilan', $row->nama_panggilan),
 		'tempat_lahir' => set_value('tempat_lahir', $row->tempat_lahir),
@@ -181,14 +172,16 @@ class Siswa extends CI_Controller
 		'pekerjaan_ibu' => set_value('pekerjaan_ibu', $row->pekerjaan_ibu),
 		'jumlah_saudara' => set_value('jumlah_saudara', $row->jumlah_saudara),
 		'urutan' => set_value('urutan', $row->urutan),
-		'universitas' => set_value('universitas', $row->universitas),
+		'id_universitas' => set_value('id_universitas', $row->id_universitas),
 		'fakultas' => set_value('fakultas', $row->fakultas),
 		'prodi' => set_value('prodi', $row->prodi),
+		'id_jurusan' => set_value('id_jurusan', $row->id_jurusan),
 		'angkatan_universitas' => set_value('angkatan_universitas', $row->angkatan_universitas),
 		'tahun_masuk_universitas' => set_value('tahun_masuk_universitas', $row->tahun_masuk_universitas),
 		'angkatan_ppm' => set_value('angkatan_ppm', $row->angkatan_ppm),
 		'tahun_masuk_ppm' => set_value('tahun_masuk_ppm', $row->tahun_masuk_ppm),
-		'kelas' => set_value('id_kelas', $row->kelas),
+		'kelas' => set_value('kelas', $row->kelas),
+		'id_kelas' => set_value('id_kelas', $row->id_kelas),
 	    );
             $this->template->load('template','siswa_form', $data);
         } else {
@@ -205,7 +198,6 @@ class Siswa extends CI_Controller
             $this->update($this->input->post('id', TRUE));
         } else {
             $data = array(
-		'id_jurusan' => $this->input->post('id_jurusan',TRUE),
 		'nama_lengkap' => $this->input->post('nama_lengkap',TRUE),
 		'nama_panggilan' => $this->input->post('nama_panggilan',TRUE),
 		'tempat_lahir' => $this->input->post('tempat_lahir',TRUE),
@@ -223,14 +215,16 @@ class Siswa extends CI_Controller
 		'pekerjaan_ibu' => $this->input->post('pekerjaan_ibu',TRUE),
 		'jumlah_saudara' => $this->input->post('jumlah_saudara',TRUE),
 		'urutan' => $this->input->post('urutan',TRUE),
-		'universitas' => $this->input->post('universitas',TRUE),
+		'id_universitas' => $this->input->post('id_universitas',TRUE),
 		'fakultas' => $this->input->post('fakultas',TRUE),
 		'prodi' => $this->input->post('prodi',TRUE),
+		'id_jurusan' => $this->input->post('id_jurusan',TRUE),
 		'angkatan_universitas' => $this->input->post('angkatan_universitas',TRUE),
 		'tahun_masuk_universitas' => $this->input->post('tahun_masuk_universitas',TRUE),
 		'angkatan_ppm' => $this->input->post('angkatan_ppm',TRUE),
 		'tahun_masuk_ppm' => $this->input->post('tahun_masuk_ppm',TRUE),
-		'kelas' => $this->input->post('id_kelas',TRUE),
+		'kelas' => $this->input->post('kelas',TRUE),
+		'id_kelas' => $this->input->post('id_kelas',TRUE),
 	    );
 
             $this->Siswa_model->update($this->input->post('id', TRUE), $data);
@@ -255,7 +249,6 @@ class Siswa extends CI_Controller
 
     public function _rules() 
     {
-	$this->form_validation->set_rules('id_jurusan', 'id jurusan', 'trim|required');
 	$this->form_validation->set_rules('nama_lengkap', 'nama lengkap', 'trim|required');
 	$this->form_validation->set_rules('nama_panggilan', 'nama panggilan', 'trim|required');
 	$this->form_validation->set_rules('tempat_lahir', 'tempat lahir', 'trim|required');
@@ -273,14 +266,16 @@ class Siswa extends CI_Controller
 	$this->form_validation->set_rules('pekerjaan_ibu', 'pekerjaan ibu', 'trim|required');
 	$this->form_validation->set_rules('jumlah_saudara', 'jumlah saudara', 'trim|required');
 	$this->form_validation->set_rules('urutan', 'urutan', 'trim|required');
-	$this->form_validation->set_rules('universitas', 'universitas', 'trim|required');
+	$this->form_validation->set_rules('id_universitas', 'universitas', 'trim|required');
 	$this->form_validation->set_rules('fakultas', 'fakultas', 'trim|required');
 	$this->form_validation->set_rules('prodi', 'prodi', 'trim|required');
+	$this->form_validation->set_rules('id_jurusan', 'id jurusan', 'trim|required');
 	$this->form_validation->set_rules('angkatan_universitas', 'angkatan universitas', 'trim|required');
 	$this->form_validation->set_rules('tahun_masuk_universitas', 'tahun masuk universitas', 'trim|required');
 	$this->form_validation->set_rules('angkatan_ppm', 'angkatan ppm', 'trim|required');
 	$this->form_validation->set_rules('tahun_masuk_ppm', 'tahun masuk ppm', 'trim|required');
-	$this->form_validation->set_rules('id_kelas', 'id_kelas', 'trim|required');
+	$this->form_validation->set_rules('kelas', 'kelas', 'trim|required');
+	$this->form_validation->set_rules('id_kelas', 'id kelas', 'trim|required');
 
 	$this->form_validation->set_rules('id', 'id', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');
@@ -308,7 +303,6 @@ class Siswa extends CI_Controller
 
         $kolomhead = 0;
         xlsWriteLabel($tablehead, $kolomhead++, "No");
-	xlsWriteLabel($tablehead, $kolomhead++, "Id Jurusan");
 	xlsWriteLabel($tablehead, $kolomhead++, "Nama Lengkap");
 	xlsWriteLabel($tablehead, $kolomhead++, "Nama Panggilan");
 	xlsWriteLabel($tablehead, $kolomhead++, "Tempat Lahir");
@@ -329,18 +323,19 @@ class Siswa extends CI_Controller
 	xlsWriteLabel($tablehead, $kolomhead++, "Universitas");
 	xlsWriteLabel($tablehead, $kolomhead++, "Fakultas");
 	xlsWriteLabel($tablehead, $kolomhead++, "Prodi");
+	xlsWriteLabel($tablehead, $kolomhead++, "Id Jurusan");
 	xlsWriteLabel($tablehead, $kolomhead++, "Angkatan Universitas");
 	xlsWriteLabel($tablehead, $kolomhead++, "Tahun Masuk Universitas");
 	xlsWriteLabel($tablehead, $kolomhead++, "Angkatan Ppm");
 	xlsWriteLabel($tablehead, $kolomhead++, "Tahun Masuk Ppm");
 	xlsWriteLabel($tablehead, $kolomhead++, "Kelas");
+	xlsWriteLabel($tablehead, $kolomhead++, "Id Kelas");
 
 	foreach ($this->Siswa_model->get_all() as $data) {
             $kolombody = 0;
 
             //ubah xlsWriteLabel menjadi xlsWriteNumber untuk kolom numeric
             xlsWriteNumber($tablebody, $kolombody++, $nourut);
-	    xlsWriteNumber($tablebody, $kolombody++, $data->id_jurusan);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->nama_lengkap);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->nama_panggilan);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->tempat_lahir);
@@ -358,14 +353,16 @@ class Siswa extends CI_Controller
 	    xlsWriteLabel($tablebody, $kolombody++, $data->pekerjaan_ibu);
 	    xlsWriteNumber($tablebody, $kolombody++, $data->jumlah_saudara);
 	    xlsWriteNumber($tablebody, $kolombody++, $data->urutan);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->universitas);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->id_universitas);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->fakultas);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->prodi);
+	    xlsWriteNumber($tablebody, $kolombody++, $data->id_jurusan);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->angkatan_universitas);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->tahun_masuk_universitas);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->angkatan_ppm);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->tahun_masuk_ppm);
-	    xlsWriteLabel($tablebody, $kolombody++, $data->id_kelas);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->kelas);
+	    xlsWriteNumber($tablebody, $kolombody++, $data->id_kelas);
 
 	    $tablebody++;
             $nourut++;
@@ -388,25 +385,10 @@ class Siswa extends CI_Controller
         $this->load->view('siswa_doc',$data);
     }
 
-    function pdf()
-    {
-        $data = array(
-            'siswa_data' => $this->Siswa_model->get_all(),
-            'start' => 0
-        );
-        
-        ini_set('memory_limit', '32M');
-        $html = $this->load->view('siswa_pdf', $data, true);
-        $this->load->library('pdf');
-        $pdf = $this->pdf->load();
-        $pdf->WriteHTML($html);
-        $pdf->Output('siswa.pdf', 'D'); 
-    }
-
 }
 
 /* End of file Siswa.php */
 /* Location: ./application/controllers/Siswa.php */
 /* Please DO NOT modify this information : */
-/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-20 10:52:46 */
+/* Generated by Harviacode Codeigniter CRUD Generator 2017-05-23 00:35:52 */
 /* http://harviacode.com */

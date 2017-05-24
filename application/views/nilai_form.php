@@ -17,6 +17,15 @@
 	    <tr><td>Kelas <?php echo form_error('kelas') ?></td>
             <td><input type="text" class="form-control" name="kelas" id="kelas" placeholder="Kelas" value="<?php echo $kelas; ?>" />
         </td>
+	    <tr><td>Membaca <?php echo form_error('membaca') ?></td>
+            <td><input type="text" class="form-control" name="membaca" id="membaca" placeholder="Membaca" value="<?php echo $membaca; ?>" />
+        </td>
+	    <tr><td>Memaknai <?php echo form_error('memaknai') ?></td>
+            <td><input type="text" class="form-control" name="memaknai" id="memaknai" placeholder="Memaknai" value="<?php echo $memaknai; ?>" />
+        </td>
+	    <tr><td>Menerangkan <?php echo form_error('menerangkan') ?></td>
+            <td><input type="text" class="form-control" name="menerangkan" id="menerangkan" placeholder="Menerangkan" value="<?php echo $menerangkan; ?>" />
+        </td>
 	    <tr><td>Uas1 <?php echo form_error('uas1') ?></td>
             <td><input type="text" class="form-control" name="uas1" id="uas1" placeholder="Uas1" value="<?php echo $uas1; ?>" />
         </td>

@@ -10,6 +10,9 @@
 	    <tr><td>Id Siswa</td><td><?php echo $id_siswa; ?></td></tr>
 	    <tr><td>Nama Siswa</td><td><?php echo $nama_siswa; ?></td></tr>
 	    <tr><td>Kelas</td><td><?php echo $kelas; ?></td></tr>
+	    <tr><td>Membaca</td><td><?php echo $membaca; ?></td></tr>
+	    <tr><td>Memaknai</td><td><?php echo $memaknai; ?></td></tr>
+	    <tr><td>Menerangkan</td><td><?php echo $menerangkan; ?></td></tr>
 	    <tr><td>Uas1</td><td><?php echo $uas1; ?></td></tr>
 	    <tr><td>Uas2</td><td><?php echo $uas2; ?></td></tr>
 	    <tr><td>Uas3</td><td><?php echo $uas3; ?></td></tr>

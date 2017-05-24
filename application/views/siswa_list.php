@@ -1,22 +1,19 @@
-
         <!-- Main content -->
         <section class='content'>
           <div class='row'>
             <div class='col-xs-12'>
               <div class='box'>
                 <div class='box-header'>
-                  <h3 class='box-title'>SISWA LIST <?php echo anchor('siswa/create/','Tambah Siswa',array('class'=>'btn btn-danger btn-sm'));?>
+                  <h3 class='box-title'>SISWA LIST <?php echo anchor('siswa/create/','Create',array('class'=>'btn btn-danger btn-sm'));?>
 		<?php echo anchor(site_url('siswa/excel'), ' <i class="fa fa-file-excel-o"></i> Excel', 'class="btn btn-primary btn-sm"'); ?>
 		<?php echo anchor(site_url('siswa/word'), '<i class="fa fa-file-word-o"></i> Word', 'class="btn btn-primary btn-sm"'); ?>
 		<?php echo anchor(site_url('siswa/pdf'), '<i class="fa fa-file-pdf-o"></i> PDF', 'class="btn btn-primary btn-sm"'); ?></h3>
                 </div><!-- /.box-header -->
                 <div class='box-body'>
-                <div class='scrollmenu'>
-        <table class="table table-bordered table-striped" id="mytable" width="100%">
+        <table class="table table-bordered table-striped" id="mytable">
             <thead>
                 <tr>
                     <th width="80px">No</th>
-		    <th>Id Jurusan</th>
 		    <th>Nama Lengkap</th>
 		    <th>Nama Panggilan</th>
 		    <th>Tempat Lahir</th>
@@ -37,11 +34,13 @@
 		    <th>Universitas</th>
 		    <th>Fakultas</th>
 		    <th>Prodi</th>
+		    <th>Id Jurusan</th>
 		    <th>Angkatan Universitas</th>
 		    <th>Tahun Masuk Universitas</th>
 		    <th>Angkatan Ppm</th>
 		    <th>Tahun Masuk Ppm</th>
 		    <th>Kelas</th>
+		    <th>Id Kelas</th>
 		    <th>Action</th>
                 </tr>
             </thead>
@@ -53,7 +52,6 @@
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>
-		    <td><?php echo $siswa->id_jurusan ?></td>
 		    <td><?php echo $siswa->nama_lengkap ?></td>
 		    <td><?php echo $siswa->nama_panggilan ?></td>
 		    <td><?php echo $siswa->tempat_lahir ?></td>
@@ -74,11 +72,13 @@
 		    <td><?php echo $siswa->universitas ?></td>
 		    <td><?php echo $siswa->fakultas ?></td>
 		    <td><?php echo $siswa->prodi ?></td>
+		    <td><?php echo $siswa->id_jurusan ?></td>
 		    <td><?php echo $siswa->angkatan_universitas ?></td>
 		    <td><?php echo $siswa->tahun_masuk_universitas ?></td>
 		    <td><?php echo $siswa->angkatan_ppm ?></td>
 		    <td><?php echo $siswa->tahun_masuk_ppm ?></td>
 		    <td><?php echo $siswa->kelas ?></td>
+		    <td><?php echo $siswa->id_kelas ?></td>
 		    <td style="text-align:center" width="140px">
 			<?php 
 			echo anchor(site_url('siswa/read/'.$siswa->id),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
@@ -99,9 +99,7 @@
         <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap.js') ?>"></script>
         <script type="text/javascript">
             $(document).ready(function () {
-                $("#mytable").dataTable({
-                	"scrollX": true
-                });
+                $("#mytable").dataTable();
             });
         </script>
                     </div><!-- /.box-body -->

@@ -23,6 +23,9 @@
 		<th>Id Siswa</th>
 		<th>Nama Siswa</th>
 		<th>Kelas</th>
+		<th>Membaca</th>
+		<th>Memaknai</th>
+		<th>Menerangkan</th>
 		<th>Uas1</th>
 		<th>Uas2</th>
 		<th>Uas3</th>
@@ -41,6 +44,9 @@
 		      <td><?php echo $nilai->id_siswa ?></td>
 		      <td><?php echo $nilai->nama_siswa ?></td>
 		      <td><?php echo $nilai->kelas ?></td>
+		      <td><?php echo $nilai->membaca ?></td>
+		      <td><?php echo $nilai->memaknai ?></td>
+		      <td><?php echo $nilai->menerangkan ?></td>
 		      <td><?php echo $nilai->uas1 ?></td>
 		      <td><?php echo $nilai->uas2 ?></td>
 		      <td><?php echo $nilai->uas3 ?></td>
