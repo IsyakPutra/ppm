@@ -9,7 +9,7 @@ class Admin extends CI_Controller {
 		if(!$this->session->userdata('level')){
 			redirect('login');
 		}else{
-			$this->load->view('v_admin');
+			$this->load->view('dashboard_admin');
 
 		}		
 	}

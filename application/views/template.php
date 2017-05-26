@@ -92,7 +92,7 @@
                                     -->
                                         <div class="pull-right">
                                             <?php
-                                            echo anchor('auth/logout','KELUAR',array('class'=>'btn btn-default btn-flat'));
+                                            echo anchor('form_login','KELUAR',array('class'=>'btn btn-default btn-flat'));
                                             ?>
                                             
                                         </div>

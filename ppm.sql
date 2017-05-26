@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2017 at 05:12 PM
+-- Generation Time: May 26, 2017 at 09:16 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -44,15 +44,16 @@ CREATE TABLE IF NOT EXISTS `guru` (
   `jenis_kelamin` enum('laki - laki','perempuan','','') NOT NULL,
   `tempat_lahir` int(20) NOT NULL,
   `tanggal_lahir` date NOT NULL,
-  `tempat_asal` varchar(25) NOT NULL
+  `tempat_asal` varchar(25) NOT NULL,
+  `id_kelas` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `guru`
 --
 
-INSERT INTO `guru` (`id_guru`, `nama_lengkap`, `nama_panggilan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `tempat_asal`) VALUES
-(2, 'uhu', 0, 'laki - laki', 0, '0000-00-00', 'njn');
+INSERT INTO `guru` (`id_guru`, `nama_lengkap`, `nama_panggilan`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `tempat_asal`, `id_kelas`) VALUES
+(2, 'uhu', 0, 'laki - laki', 0, '0000-00-00', 'njn', 0);
 
 -- --------------------------------------------------------
 
@@ -94,17 +95,39 @@ INSERT INTO `jurusan` (`id_jurusan`, `jurusan`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `kelas` (
-`id_kelas` int(3) NOT NULL,
+`id_kelas` int(11) NOT NULL,
   `kelas` varchar(15) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `kelas`
 --
 
 INSERT INTO `kelas` (`id_kelas`, `kelas`) VALUES
-(1, 'Dasar'),
-(3, 'Lanjut');
+(4, 'Dasar'),
+(5, 'Menengah'),
+(6, 'Atas'),
+(7, 'Lanjut');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `materi`
+--
+
+CREATE TABLE IF NOT EXISTS `materi` (
+`id_materi` int(5) NOT NULL,
+  `materi` varchar(25) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `materi`
+--
+
+INSERT INTO `materi` (`id_materi`, `materi`) VALUES
+(1, 'Membaca'),
+(2, 'Menulis'),
+(3, 'Menerangkan');
 
 -- --------------------------------------------------------
 
@@ -119,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `menu` (
   `icon` varchar(30) NOT NULL,
   `is_active` int(1) NOT NULL,
   `is_parent` int(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `menu`
@@ -132,31 +155,8 @@ INSERT INTO `menu` (`id`, `name`, `link`, `icon`, `is_active`, `is_parent`) VALU
 (35, 'Daftar Guru', 'guru', 'fa fa-user', 1, 0),
 (37, 'KELOLA MANAJEMEN', 'menu', 'fa fa-gears', 1, 0),
 (39, 'UNIVERSITAS', 'universitas', 'fa fa-gears', 1, 30),
-(40, 'Kelas', 'kelas', 'fa fa-gears', 1, 30),
-(42, 'Fakultas', 'fakultas', 'fa fa-gears', 1, 30);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `nilai`
---
-
-CREATE TABLE IF NOT EXISTS `nilai` (
-  `id_siswa` int(3) NOT NULL,
-  `nama_siswa` varchar(25) NOT NULL,
-  `kelas` varchar(15) NOT NULL,
-  `membaca` int(2) NOT NULL,
-  `memaknai` int(2) NOT NULL,
-  `menerangkan` int(2) NOT NULL,
-  `uas1` int(2) NOT NULL,
-  `uas2` int(2) NOT NULL,
-  `uas3` int(22) NOT NULL,
-  `uas4` int(2) NOT NULL,
-  `uas5` int(2) NOT NULL,
-  `uas6` int(2) NOT NULL,
-  `uas7` int(2) NOT NULL,
-  `uas8` int(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(42, 'Fakultas', 'fakultas', 'fa fa-gears', 1, 30),
+(44, 'kelas', 'kelas', 'fa fa-user', 1, 30);
 
 -- --------------------------------------------------------
 
@@ -188,7 +188,26 @@ INSERT INTO `report` (`idreport`, `bulan`, `nilai`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `siswa` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `id_jurusan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `siswa`
+--
+
+INSERT INTO `siswa` (`id`, `nama`, `id_jurusan`) VALUES
+(0, 'dzkjvkl', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `siswaa`
+--
+
+CREATE TABLE IF NOT EXISTS `siswaa` (
+`id_siswa` int(11) NOT NULL,
   `nama_lengkap` varchar(30) NOT NULL,
   `nama_panggilan` varchar(10) NOT NULL,
   `tempat_lahir` varchar(20) NOT NULL,
@@ -216,14 +235,63 @@ CREATE TABLE IF NOT EXISTS `siswa` (
   `tahun_masuk_ppm` year(4) NOT NULL,
   `kelas` enum('pegon_bacaaan','lambatan','cepatan','pra_saringan') NOT NULL,
   `id_kelas` int(3) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `siswa`
+-- Dumping data for table `siswaa`
 --
 
-INSERT INTO `siswa` (`id`, `nama_lengkap`, `nama_panggilan`, `tempat_lahir`, `tanggal_lahir`, `umur`, `jenis_kelamnin`, `golongan_darah`, `alamat`, `provinsi`, `kabupaten`, `kecamatan`, `nama_ayah`, `pekerjaan_ayah`, `nama_ibu`, `pekerjaan_ibu`, `jumlah_saudara`, `urutan`, `universitas`, `fakultas`, `prodi`, `id_jurusan`, `angkatan_universitas`, `tahun_masuk_universitas`, `angkatan_ppm`, `tahun_masuk_ppm`, `kelas`, `id_kelas`) VALUES
-(1, 'tes', 'cb', 'jnk', '0000-00-00', 20, 'perempuan', 'O', 'njbj', 'mknk', 'nn', 'njnj', 'njn', 'njnj', 'njn', 'njnj', 3, 2, '', 'njn', 'njn', 0, 2014, 2014, 2014, 2014, '', 0);
+INSERT INTO `siswaa` (`id_siswa`, `nama_lengkap`, `nama_panggilan`, `tempat_lahir`, `tanggal_lahir`, `umur`, `jenis_kelamnin`, `golongan_darah`, `alamat`, `provinsi`, `kabupaten`, `kecamatan`, `nama_ayah`, `pekerjaan_ayah`, `nama_ibu`, `pekerjaan_ibu`, `jumlah_saudara`, `urutan`, `universitas`, `fakultas`, `prodi`, `id_jurusan`, `angkatan_universitas`, `tahun_masuk_universitas`, `angkatan_ppm`, `tahun_masuk_ppm`, `kelas`, `id_kelas`) VALUES
+(1, 'tes', 'cb', 'jnk', '0000-00-00', 20, 'perempuan', 'O', 'njbj', 'mknk', 'nn', 'njnj', 'njn', 'njnj', 'njn', 'njnj', 3, 2, '', 'njn', 'njn', 0, 2014, 2014, 2014, 2014, '', 0),
+(2, 'latihan', 'latihan', 'latihan', '2017-05-03', 20, 'laki_laki', 'A', 'latihanlatihanlatihan', 'latihan', 'latihan', 'latihan', 'latihan', 'latihan', 'latihan', 'latihan', 3, 3, 'latihan', 'latihan', 'latihan', 2, 2014, 2015, 2014, 2014, 'pegon_bacaaan', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `uas`
+--
+
+CREATE TABLE IF NOT EXISTS `uas` (
+`id_uas` int(5) NOT NULL,
+  `uas` varchar(10) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `uas`
+--
+
+INSERT INTO `uas` (`id_uas`, `uas`) VALUES
+(1, 'UAS 1'),
+(2, 'UAS 2'),
+(3, 'UAS 3'),
+(4, 'UAS 4'),
+(5, 'UAS 5'),
+(6, 'UAS 6'),
+(7, 'UAS 7'),
+(8, 'UAS 8');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ujian`
+--
+
+CREATE TABLE IF NOT EXISTS `ujian` (
+`id_ujian` int(5) NOT NULL,
+  `id_siswa` int(11) NOT NULL,
+  `id_kelas` int(5) NOT NULL,
+  `id_materi` int(5) NOT NULL,
+  `id_uas` int(5) NOT NULL,
+  `nilai` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ujian`
+--
+
+INSERT INTO `ujian` (`id_ujian`, `id_siswa`, `id_kelas`, `id_materi`, `id_uas`, `nilai`) VALUES
+(1, 0, 1, 1, 1, 80),
+(2, 0, 4, 1, 1, 80);
 
 -- --------------------------------------------------------
 
@@ -297,6 +365,12 @@ ALTER TABLE `kelas`
  ADD PRIMARY KEY (`id_kelas`);
 
 --
+-- Indexes for table `materi`
+--
+ALTER TABLE `materi`
+ ADD PRIMARY KEY (`id_materi`);
+
+--
 -- Indexes for table `menu`
 --
 ALTER TABLE `menu`
@@ -309,10 +383,22 @@ ALTER TABLE `report`
  ADD PRIMARY KEY (`idreport`);
 
 --
--- Indexes for table `siswa`
+-- Indexes for table `siswaa`
 --
-ALTER TABLE `siswa`
- ADD PRIMARY KEY (`id`);
+ALTER TABLE `siswaa`
+ ADD PRIMARY KEY (`id_siswa`);
+
+--
+-- Indexes for table `uas`
+--
+ALTER TABLE `uas`
+ ADD PRIMARY KEY (`id_uas`);
+
+--
+-- Indexes for table `ujian`
+--
+ALTER TABLE `ujian`
+ ADD PRIMARY KEY (`id_ujian`);
 
 --
 -- Indexes for table `universitas`
@@ -344,22 +430,37 @@ MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 -- AUTO_INCREMENT for table `kelas`
 --
 ALTER TABLE `kelas`
-MODIFY `id_kelas` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `materi`
+--
+ALTER TABLE `materi`
+MODIFY `id_materi` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=43;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
 MODIFY `idreport` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `siswa`
+-- AUTO_INCREMENT for table `siswaa`
 --
-ALTER TABLE `siswa`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+ALTER TABLE `siswaa`
+MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `uas`
+--
+ALTER TABLE `uas`
+MODIFY `id_uas` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `ujian`
+--
+ALTER TABLE `ujian`
+MODIFY `id_ujian` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `universitas`
 --

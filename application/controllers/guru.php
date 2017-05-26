@@ -22,7 +22,7 @@ class Guru extends CI_Controller
             'guru_data' => $guru
         );
 
-        $this->template->load('template','guru_list', $data);
+        $this->template->load('v_admin','guru_list', $data);
     }
 
     public function read($id) 

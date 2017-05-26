@@ -69,30 +69,12 @@
                                             <small>Developer of PPM Jogja Website</small>
                                         </p>
                                     </li>
-                                    <!-- Menu Body -->
-                                    <!--
-                                    <li class="user-body">
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Followers</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Sales</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Friends</a>
-                                        </div>
-                                    </li>
-                                    -->
-                                    <!-- Menu Footer-->
+                                    
                                     <li class="user-footer">
-                                    <!--
-                                        <div class="pull-left">
-                                            <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                        </div>
-                                    -->
+                                    
                                         <div class="pull-right">
                                             <?php
-                                            echo anchor('auth/logout','KELUAR',array('class'=>'btn btn-default btn-flat'));
+                                            echo anchor('login/logout','KELUAR',array('class'=>'btn btn-default btn-flat'));
                                             ?>
                                             
                                         </div>
@@ -109,30 +91,10 @@
             <aside class="main-sidebar">
                 <!-- sidebar: style can be found in sidebar.less -->
                 <section class="sidebar">
-               <!-- Atas Search dan Profil
-                    <!-- Sidebar user panel
-                    <div class="user-panel">
-                        <div class="pull-left image">
-                            <img src="<?php echo base_url()?>template/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                        </div>
-                        <div class="pull-left info">
-                            <p>Isyak P Putra</p>
-                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                        </div>
-                    </div>
-                     // search form
-                    <form action="#" method="get" class="sidebar-form">
-                        <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Search...">
-                            <span class="input-group-btn">
-                                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-                            </span>
-                        </div>
-                    </form>
-                    <!-- /.search form -->
-                    <!-- sidebar menu: : style can be found in sidebar.less -->
+               
                     <ul class="sidebar-menu">
-                        <li class="header"><center>KELOLA DATA SISWA</center></li>
+                        <li class="header"><center>KELOLA DATA SISWA</center></li>                  
+
                         <?php
                         $menu = $this->db->get_where('menu', array('is_parent' => 0,'is_active'=>1));
                         foreach ($menu->result() as $m) {
@@ -160,7 +122,7 @@
                         <li class="header"><center>AKADEMIK SISWA</center></li>
 
         <li>
-            <a href="<?php echo site_url('nilai') ?>">
+            <a href="<?php echo site_url('ujian') ?>">
                 <i class="fa fa-edit"></i> <span>NILAI AKADEMIK</span>
             </a>
         </li>
@@ -168,8 +130,7 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-pie-chart"></i>
-            <span>GRAFIK NILAI</span>
-            <span class="pull-right-container">
+            <span class="pull-right-container"><span>GRAFIK AKADEMIK</span>
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>          
@@ -200,11 +161,7 @@
                         <li class="active">Data tables</li>
                     </ol> -->
                 </section>
-                <section>
-                    <i class="fa fa-user" aria-hidden="true" style="color: #b8c7ce; font-size: 160px; margin-left: 40%; margin-top: 3%"></i> 
-                    <h2 style="margin-left: 23%"> &nbspSelamat Datang Admin<strong> PPM Yogyakarta!</strong></h2>
-                    
-                </section>
+                
 
 
                 <!-- <?php

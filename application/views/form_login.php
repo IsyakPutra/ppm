@@ -1,21 +1,4 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-	<title>PPM Login</title>
-</head>
-<body>
-<h2>SIMS LOGIN</h2>
-<?php echo form_open('login/proseslogin')?>
-	<input type="email" name="email" placeholder="Masukkan Email Anda" style="height: 30px;margin: 0.2%;"/><br>
-	<input type="Password" name="pass" placeholder="Masukkan Password Anda" style="height: 30px;margin: 0.2%;"/><br>
-	<input type="submit" name="login" value="Login" style="height: 30px;margin: 0.2%;" />
-<?php echo form_close()?>
-
-</body>
-</html>
-
- -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -42,18 +25,6 @@
         <![endif]-->
     </head>
     <?php echo form_open('login/proseslogin')?>
-
-    <!-- <?php
-    /* handle error */
-    if (isset($_GET['error'])) : ?>
-        <div class="alert alert-warning alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <strong>Warning!</strong> <?=base64_decode($_GET['error']);?>
-        </div>
-    <?php endif;?> -->
-
     <body class="hold-transition login-page">
         <div class="login-box">
         
@@ -98,7 +69,7 @@
         <!-- jQuery 2.1.4 -->
         <script src="<?php echo base_url(); ?>assets/plugins/jQuery/jQuery-2.1.4.min.js"></script>
         <!-- Bootstrap 3.3.5 -->
-        <script src="<?php echo base_url(); ?>assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?php echo base_url().'assets/'?>bootstrap/js/bootstrap.min.js"></script>
         <!-- iCheck -->
         <script src="<?php echo base_url(); ?>assets/plugins/iCheck/icheck.min.js"></script>
         <script>

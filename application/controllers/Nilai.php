@@ -22,7 +22,7 @@ class Nilai extends CI_Controller
             'nilai_data' => $nilai
         );
 
-        $this->template->load('template','nilai_list', $data);
+        $this->template->load('v_admin','nilai_list', $data);
     }
 
     public function read($id) 

@@ -20,13 +20,16 @@ class Login extends CI_Controller {
 				if($level == 'admin'){
 					redirect('admin');				
 				}elseif ($level == 'kepala') {
-					redirect('kepala');
+					redirect('kepalappm/kepala');
 				}elseif ($level == 'petugas') {
-					redirect('petugas');
+					redirect('petugasppm/petugas');
 				}
 			}else{
 				$this->session->set_flashdata('result_login', '<br>Email atau Password yang anda masukkan salah.');
-                redirect('login');
+                echo "<script>
+				alert('Silahkan masukkan Email dan Password dengan benar');
+				window.location.href='index';
+				</script>";
 			}
 		}
 		function logout(){
