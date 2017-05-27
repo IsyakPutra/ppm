@@ -16,29 +16,19 @@
         </style>
     </head>
     <body>
-        <h2>Ujian List</h2>
+        <h2>Fakultas List</h2>
         <table class="word-table" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>Id Siswa</th>
-		<th>Id Guru</th>
-		<th>Id Kelas</th>
-		<th>Id Materi</th>
-		<th>Id Uas</th>
-		<th>Nilai</th>
+		<th>Fakultas</th>
 		
             </tr><?php
-            foreach ($ujian_data as $ujian)
+            foreach ($fakultas_data as $fakultas)
             {
                 ?>
                 <tr>
 		      <td><?php echo ++$start ?></td>
-		      <td><?php echo $ujian->id_siswa ?></td>
-		      <td><?php echo $ujian->id_guru ?></td>
-		      <td><?php echo $ujian->id_kelas ?></td>
-		      <td><?php echo $ujian->id_materi ?></td>
-		      <td><?php echo $ujian->id_uas ?></td>
-		      <td><?php echo $ujian->nilai ?></td>	
+		      <td><?php echo $fakultas->fakultas ?></td>	
                 </tr>
                 <?php
             }

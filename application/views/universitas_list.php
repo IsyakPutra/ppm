@@ -5,8 +5,8 @@
             <div class='col-xs-12'>
               <div class='box'>
                 <div class='box-header'>
-                  <h3 class='box-title'>UNIVERSITAS LIST <?php echo anchor('universitas/create/','Create',array('class'=>'btn btn-danger btn-sm'));?>
-		<?php echo anchor(site_url('universitas/pdf'), '<i class="fa fa-file-pdf-o"></i> PDF', 'class="btn btn-primary btn-sm"'); ?></h3>
+                  <h3 class='box-title'>DAFTAR PERGURUAN TINGGI&nbsp <?php echo anchor('universitas/create/','TAMBAH',array('class'=>'btn btn-warning btn-sm'));?>
+		<!-- <?php echo anchor(site_url('universitas/pdf'), '<i class="fa fa-file-pdf-o"></i> PDF', 'class="btn btn-primary btn-sm"'); ?></h3> -->
                 </div><!-- /.box-header -->
                 <div class='box-body'>
         <table class="table table-bordered table-striped" id="mytable">
@@ -14,7 +14,7 @@
                 <tr>
                     <th width="80px">No</th>
 		    <th>Universitas</th>
-		    <th>Action</th>
+		    <th>Aksi</th>
                 </tr>
             </thead>
 	    <tbody>
@@ -32,7 +32,7 @@
 			echo '  '; 
 			echo anchor(site_url('universitas/update/'.$universitas->id_universitas),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('universitas/delete/'.$universitas->id_universitas),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+			echo anchor(site_url('universitas/delete/'.$universitas->id_universitas),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Apakah anda yakin ingin menghapusnya ?\')"'); 
 			?>
 		    </td>
 	        </tr>

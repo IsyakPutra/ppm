@@ -22,7 +22,7 @@ class Jurusan extends CI_Controller
             'jurusan_data' => $jurusan
         );
 
-        $this->template->load('template','jurusan_list', $data);
+        $this->template->load('v_admin','jurusan_list', $data);
     }
 
     public function read($id) 
@@ -33,7 +33,7 @@ class Jurusan extends CI_Controller
 		'id_jurusan' => $row->id_jurusan,
 		'jurusan' => $row->jurusan,
 	    );
-            $this->template->load('template','jurusan_read', $data);
+            $this->template->load('v_admin','jurusan_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('jurusan'));
@@ -48,7 +48,7 @@ class Jurusan extends CI_Controller
 	    'id_jurusan' => set_value('id_jurusan'),
 	    'jurusan' => set_value('jurusan'),
 	);
-        $this->template->load('template','jurusan_form', $data);
+        $this->template->load('v_admin','jurusan_form', $data);
     }
     
     public function create_action() 
@@ -79,7 +79,7 @@ class Jurusan extends CI_Controller
 		'id_jurusan' => set_value('id_jurusan', $row->id_jurusan),
 		'jurusan' => set_value('jurusan', $row->jurusan),
 	    );
-            $this->template->load('template','jurusan_form', $data);
+            $this->template->load('v_admin','jurusan_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('jurusan'));

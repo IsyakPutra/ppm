@@ -37,7 +37,7 @@ class Menu extends CI_Controller
 		'is_active' => $row->is_active,
 		'is_parent' => $row->is_parent,
 	    );
-            $this->template->load('template','menu_read', $data);
+            $this->template->load('v_admin','menu_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('menu'));
@@ -56,7 +56,7 @@ class Menu extends CI_Controller
 	    'is_active' => set_value('is_active'),
 	    'is_parent' => set_value('is_parent'),
 	);
-        $this->template->load('template','menu_form', $data);
+        $this->template->load('v_admin','menu_form', $data);
     }
     
     public function create_action() 
@@ -95,7 +95,7 @@ class Menu extends CI_Controller
 		'is_active' => set_value('is_active', $row->is_active),
 		'is_parent' => set_value('is_parent', $row->is_parent),
 	    );
-            $this->template->load('template','menu_form', $data);
+            $this->template->load('v_admin','menu_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('menu'));

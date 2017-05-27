@@ -20,11 +20,13 @@
         <table class="word-table" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>Nama Lengkap</th>
+		<th>Guru</th>
 		<th>Nama Panggilan</th>
+		<th>Jenis Kelamin</th>
 		<th>Tempat Lahir</th>
 		<th>Tanggal Lahir</th>
 		<th>Tempat Asal</th>
+		<th>Id Kelas</th>
 		
             </tr><?php
             foreach ($guru_data as $guru)
@@ -32,11 +34,13 @@
                 ?>
                 <tr>
 		      <td><?php echo ++$start ?></td>
-		      <td><?php echo $guru->nama_lengkap ?></td>
+		      <td><?php echo $guru->guru ?></td>
 		      <td><?php echo $guru->nama_panggilan ?></td>
+		      <td><?php echo $guru->jenis_kelamin ?></td>
 		      <td><?php echo $guru->tempat_lahir ?></td>
 		      <td><?php echo $guru->tanggal_lahir ?></td>
-		      <td><?php echo $guru->tempat_asal ?></td>	
+		      <td><?php echo $guru->tempat_asal ?></td>
+		      <td><?php echo $guru->id_kelas ?></td>	
                 </tr>
                 <?php
             }

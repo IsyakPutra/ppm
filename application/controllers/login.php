@@ -25,7 +25,8 @@ class Login extends CI_Controller {
 					redirect('petugasppm/petugas');
 				}
 			}else{
-				$this->session->set_flashdata('result_login', '<br>Email atau Password yang anda masukkan salah.');
+				$this->session->set_flashdata('result_login');
+
                 echo "<script>
 				alert('Silahkan masukkan Email dan Password dengan benar');
 				window.location.href='index';

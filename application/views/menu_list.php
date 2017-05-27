@@ -5,10 +5,10 @@
             <div class='col-xs-12'>
               <div class='box'>
                 <div class='box-header'>
-                  <h3 class='box-title'>MENU LIST <?php echo anchor('menu/create/','Create',array('class'=>'btn btn-danger btn-sm'));?>
-		<?php echo anchor(site_url('menu/excel'), ' <i class="fa fa-file-excel-o"></i> Excel', 'class="btn btn-primary btn-sm"'); ?>
+                  <h3 class='box-title'>DAFTAR MENU&nbsp<?php echo anchor('menu/create/','TAMBAH',array('class'=>'btn btn-warning btn-sm'));?>
+		<!-- <?php echo anchor(site_url('menu/excel'), ' <i class="fa fa-file-excel-o"></i> Excel', 'class="btn btn-primary btn-sm"'); ?>
 		<?php echo anchor(site_url('menu/word'), '<i class="fa fa-file-word-o"></i> Word', 'class="btn btn-primary btn-sm"'); ?>
-		<?php echo anchor(site_url('menu/pdf'), '<i class="fa fa-file-pdf-o"></i> PDF', 'class="btn btn-primary btn-sm"'); ?></h3>
+		<?php echo anchor(site_url('menu/pdf'), '<i class="fa fa-file-pdf-o"></i> PDF', 'class="btn btn-primary btn-sm"'); ?></h3> -->
                 </div><!-- /.box-header -->
                 <div class='box-body'>
         <table class="table table-bordered table-striped" id="mytable">
@@ -20,7 +20,7 @@
 		    <th width="30">Icon</th>
 		    <th>Aktif</th>
 		    <th>Parent</th>
-		    <th></th>
+		    <th>Aksi</th>
                 </tr>
             </thead>
 	    <tbody>
@@ -44,7 +44,7 @@
 			echo '  '; 
 			echo anchor(site_url('menu/update/'.$menu->id),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('menu/delete/'.$menu->id),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+			echo anchor(site_url('menu/delete/'.$menu->id),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Apakah anda yakin ingin menghapusnya ?\')"'); 
 			?>
 		    </td>
 	        </tr>

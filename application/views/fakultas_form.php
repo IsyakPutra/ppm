@@ -5,15 +5,15 @@
               <div class='box'>
                 <div class='box-header'>
                 
-                  <h3 class='box-title'>FORMULIR JURUSAN</h3>
+                  <h3 class='box-title'>FORMULIR FAKULTAS</h3>
                       <div class='box box-primary'>
         <form action="<?php echo $action; ?>" method="post"><table class='table table-bordered'>
-	    <tr><td class="col-sm-3 control-label">Nama Jurusan <?php echo form_error('jurusan') ?></td>
-            <td><input type="text" class="form-control" name="jurusan" id="jurusan" placeholder="Masukkan Nama Jurusan" value="<?php echo $jurusan; ?>" required/>
+	    <tr><td class="col-sm-3 control-label">Nama Fakultas <?php echo form_error('fakultas') ?></td>
+            <td><input type="text" class="form-control" name="fakultas" id="fakultas" placeholder="Masukkan Nama Fakultas" value="<?php echo $fakultas; ?>" required/>
         </td>
-	    <input type="hidden" name="id_jurusan" value="<?php echo $id_jurusan; ?>" /> 
+	    <input type="hidden" name="id_fakultas" value="<?php echo $id_fakultas; ?>" /> 
 	    <tr><td colspan='2'><button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('jurusan') ?>" class="btn btn-danger">Batal</a></td></tr>
+	    <a href="<?php echo site_url('fakultas') ?>" class="btn btn-danger">Batal</a></td></tr>
 	
     </table></form>
     </div><!-- /.box-body -->

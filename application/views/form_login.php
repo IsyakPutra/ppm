@@ -25,8 +25,8 @@
         <![endif]-->
     </head>
     <?php echo form_open('login/proseslogin')?>
-    <body class="hold-transition login-page">
-        <div class="login-box">
+    <body class="hold-transition login-page" style="background-image: url('template/dist/img/ppm3.jpg'); background-repeat: no-repeat;">
+        <div class="login-box" style="background:#fff; opacity:0.9;">
         
             
             <div class="login-box-body">
@@ -58,7 +58,7 @@
                     </div><!-- /.col -->
 
                 </div>
-                <center><h4>Sistem Informasi Manajemen Siswa <b>PPM Yogyakarta</b></h4></center>
+                <center><h4>Sistem Informasi Manajemen Siswa<br><b>PPM Yogyakarta</b></h4></center>
                 </form>
 
 

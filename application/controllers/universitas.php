@@ -22,7 +22,7 @@ class Universitas extends CI_Controller
             'universitas_data' => $universitas
         );
 
-        $this->template->load('template','universitas_list', $data);
+        $this->template->load('v_admin','universitas_list', $data);
     }
 
     public function read($id) 
@@ -33,7 +33,7 @@ class Universitas extends CI_Controller
 		'id_universitas' => $row->id_universitas,
 		'universitas' => $row->universitas,
 	    );
-            $this->template->load('template','universitas_read', $data);
+            $this->template->load('v_admin','universitas_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('universitas'));
@@ -48,7 +48,7 @@ class Universitas extends CI_Controller
 	    'id_universitas' => set_value('id_universitas'),
 	    'universitas' => set_value('universitas'),
 	);
-        $this->template->load('template','universitas_form', $data);
+        $this->template->load('v_admin','universitas_form', $data);
     }
     
     public function create_action() 
@@ -79,7 +79,7 @@ class Universitas extends CI_Controller
 		'id_universitas' => set_value('id_universitas', $row->id_universitas),
 		'universitas' => set_value('universitas', $row->universitas),
 	    );
-            $this->template->load('template','universitas_form', $data);
+            $this->template->load('v_admin','universitas_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('universitas'));

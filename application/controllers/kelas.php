@@ -22,7 +22,7 @@ class Kelas extends CI_Controller
             'kelas_data' => $kelas
         );
 
-        $this->template->load('template','kelas_list', $data);
+        $this->template->load('v_admin','kelas_list', $data);
     }
 
     public function read($id) 
@@ -33,7 +33,7 @@ class Kelas extends CI_Controller
 		'id_kelas' => $row->id_kelas,
 		'kelas' => $row->kelas,
 	    );
-            $this->template->load('template','kelas_read', $data);
+            $this->template->load('v_admin','kelas_read', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kelas'));
@@ -48,7 +48,7 @@ class Kelas extends CI_Controller
 	    'id_kelas' => set_value('id_kelas'),
 	    'kelas' => set_value('kelas'),
 	);
-        $this->template->load('template','kelas_form', $data);
+        $this->template->load('v_admin','kelas_form', $data);
     }
     
     public function create_action() 
@@ -79,7 +79,7 @@ class Kelas extends CI_Controller
 		'id_kelas' => set_value('id_kelas', $row->id_kelas),
 		'kelas' => set_value('kelas', $row->kelas),
 	    );
-            $this->template->load('template','kelas_form', $data);
+            $this->template->load('v_admin','kelas_form', $data);
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('kelas'));

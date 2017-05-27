@@ -5,22 +5,24 @@
             <div class='col-xs-12'>
               <div class='box'>
                 <div class='box-header'>
-                  <h3 class='box-title'>GURU LIST <?php echo anchor('guru/create/','Create',array('class'=>'btn btn-danger btn-sm'));?>
-		<?php echo anchor(site_url('guru/excel'), ' <i class="fa fa-file-excel-o"></i> Excel', 'class="btn btn-primary btn-sm"'); ?>
+                  <h3 class='box-title'>DAFTAR GURU &nbsp<?php echo anchor('guru/create/','TAMBAH',array('class'=>'btn btn-warning btn-sm'));?>
+		<?php echo anchor(site_url('guru/excel'), ' <i class="fa fa-file-excel-o"></i> Excel', 'class="btn btn-success btn-sm"'); ?>
 		<?php echo anchor(site_url('guru/word'), '<i class="fa fa-file-word-o"></i> Word', 'class="btn btn-primary btn-sm"'); ?>
-		<?php echo anchor(site_url('guru/pdf'), '<i class="fa fa-file-pdf-o"></i> PDF', 'class="btn btn-primary btn-sm"'); ?></h3>
+		<!-- <?php echo anchor(site_url('guru/pdf'), '<i class="fa fa-file-pdf-o"></i> PDF', 'class="btn btn-primary btn-sm"'); ?></h3> -->
                 </div><!-- /.box-header -->
                 <div class='box-body'>
         <table class="table table-bordered table-striped" id="mytable">
             <thead>
                 <tr>
                     <th width="80px">No</th>
-		    <th>Nama Lengkap</th>
+		    <th>Nama Guru</th>
 		    <th>Nama Panggilan</th>
+		    <th>Jenis Kelamin</th>
 		    <th>Tempat Lahir</th>
 		    <th>Tanggal Lahir</th>
-		    <th>Tempat Asal</th>
-		    <th>Action</th>
+		    <th>Alamat Asal</th>
+		    <th>Kelas Pengampu</th>
+		    <th>Aksi</th>
                 </tr>
             </thead>
 	    <tbody>
@@ -31,18 +33,20 @@
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>
-		    <td><?php echo $guru->nama_lengkap ?></td>
+		    <td><?php echo $guru->guru ?></td>
 		    <td><?php echo $guru->nama_panggilan ?></td>
+		    <td><?php echo $guru->jenis_kelamin ?></td>
 		    <td><?php echo $guru->tempat_lahir ?></td>
 		    <td><?php echo $guru->tanggal_lahir ?></td>
 		    <td><?php echo $guru->tempat_asal ?></td>
+		    <td><?php echo $guru->id_kelas ?></td>
 		    <td style="text-align:center" width="140px">
 			<?php 
 			echo anchor(site_url('guru/read/'.$guru->id_guru),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
 			echo anchor(site_url('guru/update/'.$guru->id_guru),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('guru/delete/'.$guru->id_guru),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+			echo anchor(site_url('guru/delete/'.$guru->id_guru),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Apakah anda yaking ingin menghapusnya?\')"'); 
 			?>
 		    </td>
 	        </tr>

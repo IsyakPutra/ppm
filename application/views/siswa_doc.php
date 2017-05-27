@@ -20,8 +20,30 @@
         <table class="word-table" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>Nama</th>
+		<th>Siswa</th>
+		<th>Nama Panggilan</th>
+		<th>Tempat Lahir</th>
+		<th>Tanggal Lahir</th>
+		<th>Umur</th>
+		<th>Jenis Kelamnin</th>
+		<th>Golongan Darah</th>
+		<th>No Hp</th>
+		<th>Alamat</th>
+		<th>Provinsi</th>
+		<th>Kabupaten</th>
+		<th>Kecamatan</th>
+		<th>Nama Ayah</th>
+		<th>Pekerjaan Ayah</th>
+		<th>Nama Ibu</th>
+		<th>Pekerjaan Ibu</th>
+		<th>Jumlah Saudara</th>
+		<th>Urutan</th>
+		<th>Id Universitas</th>
+		<th>Id Fakultas</th>
 		<th>Id Jurusan</th>
+		<th>Tahun Masuk Universitas</th>
+		<th>Tahun Masuk Ppm</th>
+		<th>Id Kelas</th>
 		
             </tr><?php
             foreach ($siswa_data as $siswa)
@@ -29,8 +51,30 @@
                 ?>
                 <tr>
 		      <td><?php echo ++$start ?></td>
-		      <td><?php echo $siswa->nama ?></td>
-		      <td><?php echo $siswa->id_jurusan ?></td>	
+		      <td><?php echo $siswa->siswa ?></td>
+		      <td><?php echo $siswa->nama_panggilan ?></td>
+		      <td><?php echo $siswa->tempat_lahir ?></td>
+		      <td><?php echo $siswa->tanggal_lahir ?></td>
+		      <td><?php echo $siswa->umur ?></td>
+		      <td><?php echo $siswa->jenis_kelamnin ?></td>
+		      <td><?php echo $siswa->golongan_darah ?></td>
+		      <td><?php echo $siswa->no_hp ?></td>
+		      <td><?php echo $siswa->alamat ?></td>
+		      <td><?php echo $siswa->provinsi ?></td>
+		      <td><?php echo $siswa->kabupaten ?></td>
+		      <td><?php echo $siswa->kecamatan ?></td>
+		      <td><?php echo $siswa->nama_ayah ?></td>
+		      <td><?php echo $siswa->pekerjaan_ayah ?></td>
+		      <td><?php echo $siswa->nama_ibu ?></td>
+		      <td><?php echo $siswa->pekerjaan_ibu ?></td>
+		      <td><?php echo $siswa->jumlah_saudara ?></td>
+		      <td><?php echo $siswa->urutan ?></td>
+		      <td><?php echo $siswa->id_universitas ?></td>
+		      <td><?php echo $siswa->id_fakultas ?></td>
+		      <td><?php echo $siswa->id_jurusan ?></td>
+		      <td><?php echo $siswa->tahun_masuk_universitas ?></td>
+		      <td><?php echo $siswa->tahun_masuk_ppm ?></td>
+		      <td><?php echo $siswa->id_kelas ?></td>	
                 </tr>
                 <?php
             }

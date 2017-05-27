@@ -5,20 +5,23 @@
             <div class='col-xs-12'>
               <div class='box'>
                 <div class='box-header'>
-                  <h3 class='box-title'>UJIAN LIST <?php echo anchor('ujian/create/','Create',array('class'=>'btn btn-danger btn-sm'));?>
-		<?php echo anchor(site_url('ujian/pdf'), '<i class="fa fa-file-pdf-o"></i> PDF', 'class="btn btn-primary btn-sm"'); ?></h3>
+                  <h3 class='box-title'>DAFTAR NILAI UJIAN &nbsp<?php echo anchor('ujian/create/','Tambah',array('class'=>'btn btn-warning btn-sm'));?>
+		<?php echo anchor(site_url('ujian/excel'), ' <i class="fa fa-file-excel-o"></i> Excel', 'class="btn btn-success btn-sm"'); ?>
+		<?php echo anchor(site_url('ujian/word'), '<i class="fa fa-file-word-o"></i> Word', 'class="btn btn-primary btn-sm"'); ?>
+		<!-- <?php echo anchor(site_url('ujian/pdf'), '<i class="fa fa-file-pdf-o"></i> PDF', 'class="btn btn-primary btn-sm"'); ?></h3> -->
                 </div><!-- /.box-header -->
                 <div class='box-body'>
         <table class="table table-bordered table-striped" id="mytable">
             <thead>
                 <tr>
                     <th width="80px">No</th>
-		    <th>Id Siswa</th>
-		    <th>Id Kelas</th>
-		    <th>Id Materi</th>
-		    <th>Id Uas</th>
+		    <th>Nama Siswa</th>
+		    <th>Guru Penguji</th>
+		    <th>Kelas</th>
+		    <th>Materi Ujian</th>
+		    <th>UAS ke-</th>
 		    <th>Nilai</th>
-		    <th>Action</th>
+		    <th>Aksi</th>
                 </tr>
             </thead>
 	    <tbody>
@@ -30,6 +33,7 @@
                 <tr>
 		    <td><?php echo ++$start ?></td>
 		    <td><?php echo $ujian->id_siswa ?></td>
+		    <td><?php echo $ujian->id_guru ?></td>
 		    <td><?php echo $ujian->id_kelas ?></td>
 		    <td><?php echo $ujian->id_materi ?></td>
 		    <td><?php echo $ujian->id_uas ?></td>

@@ -5,22 +5,22 @@
               <div class='box'>
                 <div class='box-header'>
                 
-                  <h3 class='box-title'>MENU</h3>
+                  <h3 class='box-title'>FORMULIR MENU</h3>
                       <div class='box box-primary'>
         <form action="<?php echo $action; ?>" method="post"><table class='table table-bordered'>
-	    <tr><td width="120">Name <?php echo form_error('name') ?></td>
-            <td><input type="text" class="form-control" name="name" id="name" placeholder="Name" value="<?php echo $name; ?>" />
+	    <tr><td class="col-sm-3 control-label">Nama Menu<?php echo form_error('name') ?></td>
+            <td><input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama" value="<?php echo $name; ?>" required/>
         </td>
-	    <tr><td>Link <?php echo form_error('link') ?></td>
-            <td><input type="text" class="form-control" name="link" id="link" placeholder="Link" value="<?php echo $link; ?>" />
+	    <tr><td>Link Menu<?php echo form_error('link') ?></td>
+            <td><input type="text" class="form-control" name="link" id="link" placeholder="Masukkan Nama Link" value="<?php echo $link; ?>" required/>
         </td>
-	    <tr><td>Icon <?php echo form_error('icon') ?></td>
-            <td><input type="text" class="form-control" name="icon" id="icon" placeholder="Icon" value="<?php echo $icon; ?>" />
+	    <tr><td>Ikon <?php echo form_error('icon') ?></td>
+            <td><input type="text" class="form-control" name="icon" id="icon" placeholder="Masukkan Ikon Menu" value="<?php echo $icon; ?>" required/>
         </td>
-	    <tr><td>Is Active <?php echo form_error('is_active') ?></td>
+	    <tr><td>Status <?php echo form_error('is_active') ?></td>
                 <td><?php echo form_dropdown('is_active',array('1'=>'AKTIF','0'=>'TIDAK AKTIF'),$is_active,"class='form-control'");?>
         </td>
-	    <tr><td>Is Parent <?php echo form_error('is_parent') ?></td>
+	    <tr><td>Apakah Parent <?php echo form_error('is_parent') ?></td>
             <td>
                 <select name="is_parent" class="form-control">
                     <option value="0">YA</option>
@@ -36,7 +36,7 @@
         </td>
 	    <input type="hidden" name="id" value="<?php echo $id; ?>" /> 
 	    <tr><td colspan='2'><button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('menu') ?>" class="btn btn-default">Cancel</a></td></tr>
+	    <a href="<?php echo site_url('menu') ?>" class="btn btn-warning">Batal</a></td></tr>
 	
     </table></form>
     </div><!-- /.box-body -->

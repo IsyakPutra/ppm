@@ -5,33 +5,34 @@
             <div class='col-xs-12'>
               <div class='box'>
                 <div class='box-header'>
-                  <h3 class='box-title'>DAFTAR KELAS &nbsp<?php echo anchor('kelas/create/','TAMBAH',array('class'=>'btn btn-warning btn-sm'));?>		
+                  <h3 class='box-title'>DAFTAR FAKULTAS <?php echo anchor('fakultas/create/','TAMBAH',array('class'=>'btn btn-warning btn-sm'));?>
+		<!-- <?php echo anchor(site_url('fakultas/pdf'), '<i class="fa fa-file-pdf-o"></i> PDF', 'class="btn btn-primary btn-sm"'); ?></h3> -->
                 </div><!-- /.box-header -->
                 <div class='box-body'>
         <table class="table table-bordered table-striped" id="mytable">
             <thead>
                 <tr>
                     <th width="80px">No</th>
-		    <th>Kelas</th>
+		    <th>Fakultas</th>
 		    <th>Aksi</th>
                 </tr>
             </thead>
 	    <tbody>
             <?php
             $start = 0;
-            foreach ($kelas_data as $kelas)
+            foreach ($fakultas_data as $fakultas)
             {
                 ?>
                 <tr>
 		    <td><?php echo ++$start ?></td>
-		    <td><?php echo $kelas->kelas ?></td>
+		    <td><?php echo $fakultas->fakultas ?></td>
 		    <td style="text-align:center" width="140px">
 			<?php 
-			echo anchor(site_url('kelas/read/'.$kelas->id_kelas),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('fakultas/read/'.$fakultas->id_fakultas),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('kelas/update/'.$kelas->id_kelas),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
+			echo anchor(site_url('fakultas/update/'.$fakultas->id_fakultas),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('kelas/delete/'.$kelas->id_kelas),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Apakah anda yakin ingin menghapusnya ?\')"'); 
+			echo anchor(site_url('fakultas/delete/'.$fakultas->id_fakultas),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Apakah anda yakin ingin menghapusnya ?\')"'); 
 			?>
 		    </td>
 	        </tr>

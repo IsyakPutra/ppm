@@ -55,30 +55,16 @@
 
 
                             <!-- User Account: style can be found in dropdown.less -->
-                            <li class="dropdown user user-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <!-- <img src="<?php echo base_url()?>template/dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> // Gambar Muka-->
-                                    <span class="hidden-xs">Isyak P Putra &nbsp <i class="fa fa-power-off" aria-hidden="true"></i></span>
+                            <li class="dropdown use-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-right: 30px;">                                    
+                                    <span class="hidden-xs">Admin &nbsp <i class="fa fa-power-off" aria-hidden="true"></i></span>
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <!-- User image -->
-                                    <li class="user-header">
-                                        
-                                        <p>
-                                            Isyak P Putra 
-                                            <small>Developer of PPM Jogja Website</small>
-                                        </p>
-                                    </li>
-                                    
-                                    <li class="user-footer">
-                                    
-                                        <div class="pull-right">
-                                            <?php
-                                            echo anchor('login/logout','KELUAR',array('class'=>'btn btn-default btn-flat'));
-                                            ?>
-                                            
-                                        </div>
-                                    </li>
+                                <ul class="dropdown-menu">                                 
+                                    <div class="pull-right" style="padding-right: 15px">
+                                        <?php
+                                        echo anchor('login/logout','KELUAR',array('class'=>'btn btn-danger btn-sm'));
+                                        ?>                                            
+                                    </div>                                    
                                 </ul>
                             </li>
                             <!-- Control Sidebar Toggle Button -->

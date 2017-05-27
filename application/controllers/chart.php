@@ -3,12 +3,12 @@
 class Chart extends CI_Controller {
     function __construct(){
         parent::__construct();
-        $this->load->model('mread');
+        $this->load->model('mchart');
     }
     
     public function index()
     {
-        $data['report'] = $this->mread->report();
+        $data['report'] = $this->mchart->report();
         $this->load->view('report', $data);
     }
 }

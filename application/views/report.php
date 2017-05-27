@@ -1,7 +1,7 @@
 <?php
     /* Mengambil query report*/
     foreach($report as $result){
-        $bulan[] = $result->bulan; //ambil bulan
+        $bulan[] = $result->id_uas; //ambil bulan
         $value[] = (float) $result->nilai; //ambil nilai
     }
     /* end mengambil query*/
