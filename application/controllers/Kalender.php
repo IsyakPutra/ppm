@@ -23,7 +23,7 @@ class Kalender extends CI_Controller{
       'data'=>$this->km->list()
     ];
     
-    $this->template->load('template','v_kalender',$data);
+    $this->template->load('v_admin','v_kalender',$data);
   }
 
   public function edit($id){
@@ -43,7 +43,7 @@ class Kalender extends CI_Controller{
       'detail'=>$this->km->find($id)
     ];
 
-    $this->template->load('template','v_kalender',$data);
+    $this->template->load('v_admin','v_kalender',$data);
   }
 
   public function delete($id){

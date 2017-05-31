@@ -28,6 +28,21 @@
             <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <!-- jQuery 2.1.4 -->
+        <script src="<?php echo base_url() ?>template/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <?php if ($this->uri->segment(1) == 'kalender'): ?><!-- assets uri kalender -->
+            <link rel="stylesheet" href="<?= base_url('plugins/fullcalendar/lib/cupertino/jquery-ui.min.css')?>">
+            <link rel="stylesheet" href="<?= base_url('plugins/fullcalendar/fullcalendar.min.css')?>">
+            <link rel="stylesheet" href="<?= base_url('plugins/fullcalendar/fullcalendar.print.min.css')?>" media='print'>
+            <link rel="stylesheet" href="<?= base_url('plugins/datetimepicker/bootstrap-datetimepicker.min.css')?>" media='screen'>
+            <script src="<?= base_url('plugins/datepicker/bootstrap-datepicker.js')?>"></script>
+            <script src="<?= base_url('plugins/fullcalendar/lib/moment.min.js')?>"></script>
+            <script src="<?= base_url('plugins/fullcalendar/fullcalendar.min.js')?>"></script>
+            <script src="<?= base_url('plugins/fullcalendar/locale/id.js')?>"></script>
+            <script src="<?= base_url('plugins/datetimepicker/bootstrap-datetimepicker.min.js')?>"></script>
+            <script src="<?= base_url('plugins/datetimepicker/bootstrap-datetimepicker.id.js')?>"></script>
+            <script src="<?= base_url('assets/js/custom.js')?>"></script>
+        <?php endif ?><!-- /assets uri kalender -->
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
@@ -165,8 +180,6 @@
             <div class="control-sidebar-bg"></div>
         </div><!-- ./wrapper -->
 
-        <!-- jQuery 2.1.4 -->
-        <script src="<?php echo base_url() ?>template/plugins/jQuery/jQuery-2.1.4.min.js"></script>
         <!-- Bootstrap 3.3.5 -->
         <script src="<?php echo base_url() ?>template/bootstrap/js/bootstrap.min.js"></script>
         <!-- DataTables -->
