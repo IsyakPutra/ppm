@@ -9,6 +9,7 @@ class Chart extends CI_Controller {
     public function index()
     {
         $data['report'] = $this->mchart->report();
-        $this->load->view('report', $data);
+
+        $this->template->load('v_admin','report',$data);
     }
 }
