@@ -17,11 +17,11 @@
           <?= form_open() ?>
             <div class="form-group">
               <label for="judul">Judul Kegiatan</label>
-              <input type="text" class="form-control" name="judul" value="<?= $judul ?>">
+              <input type="text" class="form-control" name="judul" value="<?= $judul ?>" required>
             </div>
             <div class="form-group">
               <label for="waktu">Waktu Kegiatan</label>
-              <input type="text" class="form-control" id="datetimepicker" name="waktu" value="<?= $waktu ?>">
+              <input type="text" class="form-control" id="datetimepicker" name="waktu" value="<?= $waktu ?>" required>
             </div>
             <button class="btn btn-primary" type="submit">Simpan</button>
           <?= form_close() ?> 
@@ -51,8 +51,25 @@
                     <tr>
                       <td><a href="<?= base_url('kalender/edit/'.$agenda['id'])?>"><?= $agenda['title']?></a></td>
                       <td><?= $agenda['start']?></td>
-                      <td><a href="<?= base_url('kalender/delete/'.$agenda['id'])?>" class="btn btn-danger btn-xs">Hapus</a></td>
+                      <td><a type="button" data-toggle="modal" data-target="#modalHapusAgenda<?= $agenda['id'] ?>" class="btn btn-danger btn-xs">Hapus</a></td>
                     </tr>
+                    <div id="modalHapusAgenda<?= $agenda['id'] ?>" class="modal fade modal-danger stackable">
+                      <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button class="close" type="button" data-dismiss>&times;</button>
+
+                            <h4 class="modal-title">Peringatan!</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p>Apakah anda yakin ingin menghapus agenda <strong><?= $agenda['title'] ?></strong></p>
+                          </div>
+                          <div class="modal-footer">
+                            <a href="<?= base_url('kalender/delete/'.$agenda['id'])?>" class="btn btn-danger">Hapus</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   <?php endforeach ?>
                 <?php endif ?>
               </tbody>
@@ -81,18 +98,6 @@ $(document).ready(function(){
     navLinks: true,
     eventLimit: true,
     events: <?= json_encode($data) ?>
-  });
-  $('#datetimepicker').datetimepicker({
-    language:  'id',
-    weekStart: 1,
-    todayBtn:  1,
-    autoclose: 1,
-    todayHighlight: 1,
-    startView: 2,
-    forceParse: 0,
-    showMeridian: 1,
-    format: "yyyy-mm-dd hh:ii:ss",
-    locale: "id"
   });
 });
 </script>
