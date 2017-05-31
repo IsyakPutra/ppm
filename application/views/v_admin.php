@@ -146,6 +146,12 @@
             
           </ul>
         </li>
+        <li class="header"><center>KALENDER AKADEMIK</center></li>
+        <li>
+            <a href="<?= base_url('kalender') ?>">
+                <i class="fa fa-calendar"></i> Kalender
+            </a>
+        </li>
         
     
         </ul>
