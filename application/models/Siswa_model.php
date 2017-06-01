@@ -16,11 +16,17 @@ class Siswa_model extends CI_Model
     }
 
     // get all
+    // SELECT * FROM siswa join jurusan on siswa.id_jurusan=jurusan.id_jurusan
     function get_all()
     {
         $this->db->order_by($this->id, $this->order);
+        $this->db->join('jurusan', 'siswa.id_jurusan=jurusan.id_jurusan');
+        // $this->db->join('fakultas', 'jurusan.id_fakultas=fakultas.id_fakultas');
+        // $this->db->join('universitas', 'fakultas.id_universitas=universitas.id_universitas');
+
         return $this->db->get($this->table)->result();
     }
+
 
     // get data by id
     function get_by_id($id)

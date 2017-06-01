@@ -113,21 +113,19 @@
             </a>
         </li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span class="pull-right-container"><span>GRAFIK AKADEMIK</span>
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>          
-          <ul class="treeview-menu">
-            <li><a href="<?php echo site_url('chart') ?>"><i class="fa fa-circle-o"></i> Nilai Kelas</a></li>
-            <li><a href="<?php echo site_url('chart') ?>"><i class="fa fa-circle-o"></i> Nilai Semester</a></li>
-            
-          </ul>
+        <li>
+            <a href="<?= base_url('grafik') ?>">
+                <i class="fa fa-pie-chart"></i> <span>GRAFIK AKADEMIK</span>
+            </a>
+        </li>
+        <li class="header"><center>KALENDER AKADEMIK</center></li>
+        <li>
+            <a href="<?= base_url('kalender') ?>">
+                <i class="fa fa-calendar"></i> <span>AGENDA</span>
+            </a>
         </li>
         
-        
+    
         </ul>
                 </section>
                 <!-- /.sidebar -->

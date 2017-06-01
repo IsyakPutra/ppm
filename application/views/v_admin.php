@@ -28,6 +28,24 @@
             <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <!-- jQuery 2.1.4 -->
+        <script src="<?php echo base_url() ?>template/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <?php if ($this->uri->segment(1) == 'kalender'): ?><!-- assets uri kalender -->
+            <link rel="stylesheet" href="<?= base_url('plugins/fullcalendar/lib/cupertino/jquery-ui.min.css')?>">
+            <link rel="stylesheet" href="<?= base_url('plugins/fullcalendar/fullcalendar.min.css')?>">
+            <link rel="stylesheet" href="<?= base_url('plugins/fullcalendar/fullcalendar.print.min.css')?>" media='print'>
+            <link rel="stylesheet" href="<?= base_url('plugins/datetimepicker/bootstrap-datetimepicker.min.css')?>" media='screen'>
+            <script src="<?= base_url('plugins/datepicker/bootstrap-datepicker.js')?>"></script>
+            <script src="<?= base_url('plugins/fullcalendar/lib/moment.min.js')?>"></script>
+            <script src="<?= base_url('plugins/fullcalendar/fullcalendar.min.js')?>"></script>
+            <script src="<?= base_url('plugins/fullcalendar/locale/id.js')?>"></script>
+            <script src="<?= base_url('plugins/datetimepicker/bootstrap-datetimepicker.min.js')?>"></script>
+            <script src="<?= base_url('plugins/datetimepicker/bootstrap-datetimepicker.id.js')?>"></script>
+            <script src="<?= base_url('assets/js/custom.js')?>"></script>
+        <!-- /assets uri kalender --><?php endif ?> 
+        <?php if ($this->uri->segment(1) == 'grafik'): ?><!-- assets uri grafik -->
+            <script src="<?= base_url('plugins/highcharts/highcharts.js')?>"></script>
+        <!-- /assets uri grafik --><?php endif ?>   
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
@@ -118,18 +136,16 @@
             </a>
         </li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span class="pull-right-container"><span>GRAFIK AKADEMIK</span>
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>          
-          <ul class="treeview-menu">
-            <li><a href="<?php echo site_url('chart') ?>"><i class="fa fa-circle-o"></i> Nilai Kelas</a></li>
-            <li><a href="<?php echo site_url('chart') ?>"><i class="fa fa-circle-o"></i> Nilai Semester</a></li>
-            
-          </ul>
+        <li>
+            <a href="<?= base_url('grafik') ?>">
+                <i class="fa fa-pie-chart"></i> <span>GRAFIK AKADEMIK</span>
+            </a>
+        </li>
+        <li class="header"><center>KALENDER AKADEMIK</center></li>
+        <li>
+            <a href="<?= base_url('kalender') ?>">
+                <i class="fa fa-calendar"></i> <span>AGENDA</span>
+            </a>
         </li>
         
     
@@ -165,8 +181,6 @@
             <div class="control-sidebar-bg"></div>
         </div><!-- ./wrapper -->
 
-        <!-- jQuery 2.1.4 -->
-        <script src="<?php echo base_url() ?>template/plugins/jQuery/jQuery-2.1.4.min.js"></script>
         <!-- Bootstrap 3.3.5 -->
         <script src="<?php echo base_url() ?>template/bootstrap/js/bootstrap.min.js"></script>
         <!-- DataTables -->

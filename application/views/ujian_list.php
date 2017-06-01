@@ -44,7 +44,7 @@
 			echo '  '; 
 			echo anchor(site_url('ujian/update/'.$ujian->id_ujian),'<i class="fa fa-pencil-square-o"></i>',array('title'=>'edit','class'=>'btn btn-danger btn-sm')); 
 			echo '  '; 
-			echo anchor(site_url('ujian/delete/'.$ujian->id_ujian),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"'); 
+			echo anchor(site_url('ujian/delete/'.$ujian->id_ujian),'<i class="fa fa-trash-o"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Apakah anda yakin ingin menghapusnya ?\')"'); 
 			?>
 		    </td>
 	        </tr>

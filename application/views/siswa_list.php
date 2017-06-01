@@ -25,7 +25,7 @@
 		    <th>Jenis Kelamnin</th>
 		    <th>Golongan Darah</th>
 		    <th>No Hp</th>
-		    <th>Alamat</th>
+		    <th style="padding-right: 7%">Alamat</th>
 		    <th>Provinsi</th>
 		    <th>Kabupaten</th>
 		    <th>Kecamatan</th>
@@ -72,7 +72,8 @@
 		    <td><?php echo $siswa->urutan ?></td>
 		    <td><?php echo $siswa->id_universitas ?></td>
 		    <td><?php echo $siswa->id_fakultas ?></td>
-		    <td><?php echo $siswa->id_jurusan ?></td>
+		    <!-- <td><?php echo $siswa->id_jurusan ?></td> -->
+		    <td><?php echo $siswa->jurusan ?></td>
 		    <td><?php echo $siswa->tahun_masuk_universitas ?></td>
 		    <td><?php echo $siswa->tahun_masuk_ppm ?></td>
 		    <td><?php echo $siswa->id_kelas ?></td>

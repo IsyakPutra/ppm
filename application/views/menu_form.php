@@ -11,19 +11,19 @@
 	    <tr><td class="col-sm-3 control-label">Nama Menu<?php echo form_error('name') ?></td>
             <td><input type="text" class="form-control" name="name" id="name" placeholder="Masukkan Nama" value="<?php echo $name; ?>" required/>
         </td>
-	    <tr><td>Link Menu<?php echo form_error('link') ?></td>
+	    <tr><td>Link<?php echo form_error('link') ?></td>
             <td><input type="text" class="form-control" name="link" id="link" placeholder="Masukkan Nama Link" value="<?php echo $link; ?>" required/>
         </td>
-	    <tr><td>Ikon <?php echo form_error('icon') ?></td>
-            <td><input type="text" class="form-control" name="icon" id="icon" placeholder="Masukkan Ikon Menu" value="<?php echo $icon; ?>" required/>
+	    <tr><td>Gambar Ikon <?php echo form_error('icon') ?></td>
+            <td><input type="text" class="form-control" name="icon" id="icon" placeholder="Masukkan Gambar Ikon" value="<?php echo $icon; ?>" required/>
         </td>
 	    <tr><td>Status <?php echo form_error('is_active') ?></td>
                 <td><?php echo form_dropdown('is_active',array('1'=>'AKTIF','0'=>'TIDAK AKTIF'),$is_active,"class='form-control'");?>
         </td>
-	    <tr><td>Apakah Parent <?php echo form_error('is_parent') ?></td>
+	    <tr><td>Jenis<?php echo form_error('is_parent') ?></td>
             <td>
                 <select name="is_parent" class="form-control">
-                    <option value="0">YA</option>
+                    <option value="0">UTAMA</option>
                     <?php
                     $menu = $this->db->get('menu');
                     foreach ($menu->result() as $m){
