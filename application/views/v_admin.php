@@ -138,13 +138,21 @@
 
         <li>
             <a href="<?= base_url('grafik') ?>">
+<<<<<<< HEAD
                 <i class="fa fa-pie-chart"></i> <span>GRAFIK AKADEMIK</span>
+=======
+                <i class="fa fa-pie-chart"></i> GRAFIK AKADEMIK
+>>>>>>> b6e59eb5444f25cc0a21ed9214657f2390f8e85d
             </a>
         </li>
         <li class="header"><center>KALENDER AKADEMIK</center></li>
         <li>
             <a href="<?= base_url('kalender') ?>">
+<<<<<<< HEAD
                 <i class="fa fa-calendar"></i> <span>AGENDA</span>
+=======
+                <i class="fa fa-calendar"></i> Kalender
+>>>>>>> b6e59eb5444f25cc0a21ed9214657f2390f8e85d
             </a>
         </li>
         

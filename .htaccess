@@ -1,6 +1,17 @@
+<<<<<<< HEAD
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
+=======
+Options +FollowSymLinks
+Options -Indexes
+DirectoryIndex index.php
+RewriteEngine on
+RewriteCond $1 !^(index\.php|assets|images|css|js|install|robots\.txt|favicon\.ico)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRUle ^(.*)$ index.php?/$1 [L,QSA]
+>>>>>>> b6e59eb5444f25cc0a21ed9214657f2390f8e85d

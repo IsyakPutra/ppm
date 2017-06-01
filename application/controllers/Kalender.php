@@ -20,7 +20,11 @@ class Kalender extends CI_Controller{
     }
 
     $data = [
+<<<<<<< HEAD
       'data'=>$this->km->agenda()
+=======
+      'data'=>$this->km->list()
+>>>>>>> b6e59eb5444f25cc0a21ed9214657f2390f8e85d
     ];
     
     $this->template->load('v_admin','v_kalender',$data);
@@ -39,7 +43,11 @@ class Kalender extends CI_Controller{
     }
 
     $data = [
+<<<<<<< HEAD
       'data'=>$this->km->agenda(),
+=======
+      'data'=>$this->km->list(),
+>>>>>>> b6e59eb5444f25cc0a21ed9214657f2390f8e85d
       'detail'=>$this->km->find($id)
     ];
 

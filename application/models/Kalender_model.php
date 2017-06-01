@@ -5,7 +5,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 * 
 */
 class Kalender_model extends CI_Model {
+<<<<<<< HEAD
   public function agenda(){
+=======
+  public function list(){
+>>>>>>> b6e59eb5444f25cc0a21ed9214657f2390f8e85d
     return $this->db->select('id_kegiatan as id, judul_kegiatan as title, tanggal_kegiatan as start')->get('kalender')->result_array();
   }
 
