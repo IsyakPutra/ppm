@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  //Date picker
+  // Date picker
   $('#datetimepicker').datetimepicker({
     language:  'id',
     weekStart: 1,

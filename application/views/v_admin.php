@@ -42,7 +42,10 @@
             <script src="<?= base_url('plugins/datetimepicker/bootstrap-datetimepicker.min.js')?>"></script>
             <script src="<?= base_url('plugins/datetimepicker/bootstrap-datetimepicker.id.js')?>"></script>
             <script src="<?= base_url('assets/js/custom.js')?>"></script>
-        <?php endif ?><!-- /assets uri kalender -->
+        <!-- /assets uri kalender --><?php endif ?> 
+        <?php if ($this->uri->segment(1) == 'grafik'): ?><!-- assets uri grafik -->
+            <script src="<?= base_url('plugins/highcharts/highcharts.js')?>"></script>
+        <!-- /assets uri grafik --><?php endif ?>   
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
@@ -133,18 +136,10 @@
             </a>
         </li>
 
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span class="pull-right-container"><span>GRAFIK AKADEMIK</span>
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>          
-          <ul class="treeview-menu">
-            <li><a href="<?php echo site_url('chart') ?>"><i class="fa fa-circle-o"></i> Nilai Kelas</a></li>
-            <li><a href="<?php echo site_url('chart') ?>"><i class="fa fa-circle-o"></i> Nilai Semester</a></li>
-            
-          </ul>
+        <li>
+            <a href="<?= base_url('grafik') ?>">
+                <i class="fa fa-pie-chart"></i> GRAFIK AKADEMIK
+            </a>
         </li>
         <li class="header"><center>KALENDER AKADEMIK</center></li>
         <li>

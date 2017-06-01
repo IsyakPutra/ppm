@@ -6,7 +6,7 @@ if (!defined('BASEPATH'))
 class Siswa_model extends CI_Model
 {
 
-    public $table = 'siswa';
+    public $table = 'siswaa';
     public $id = 'id_siswa';
     public $order = 'DESC';
 
